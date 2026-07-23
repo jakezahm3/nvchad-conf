@@ -1,10 +1,10 @@
--- 1. Fetch NvChad's default configuration options table
+-- Fetch NvChad's default configuration options table
 local options = require("nvchad.configs.cmp")
 
--- 2. Safely inject your Codeium source into NvChad's list
+-- Safely inject your Codeium source into NvChad's active list
 table.insert(options.sources, { name = "codeium", group_index = 2 })
 
--- 3. Inject your custom lspkind icon formatting
+-- Apply your custom lspkind icon formatting layout
 options.formatting = {
   format = require("lspkind").cmp_format({
     mode = "symbol",
@@ -14,6 +14,5 @@ options.formatting = {
   }),
 }
 
--- 4. Pass the modified table back to NvChad
+-- Return the unified table so Lazy.nvim incorporates it seamlessly
 return options
-
