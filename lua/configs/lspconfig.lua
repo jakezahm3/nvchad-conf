@@ -1,13 +1,29 @@
-require("nvchad.configs.lspconfig").defaults()
+local servers = {
+  html = {},
+  awk_ls = {},
+  bash-language-server = {},
+  ruff = {},
+  rust-analyzer = {},
+  stylua = {},
+  nil = {},
+  pyright = {
+    settings = {
+      python = {
+        analysis = {
+          autoSearchPaths = true,
+          typeCheckingMode = "basic",
+        },
+      },
+    },
+  },
+}
 
-local servers = { "html" = {}, 
-                  "cssls" = {},
-                  "rust-analyzer" = {}, 
-                  "pyright" = {}, 
-                  "lua-language-server" = {}, 
-                  "nil" = {},  
-                }
+for name, opts in pairs(servers) do
+  vim.lsp.config(name, opts)
+  vim.lsp.enable(name)
+end
 
-vim.lsp.enable(servers)
+-- if you dont want to call the enable method in the loop, just pass a table.
+vim.lsp.enable(vim.tbl_keys(servers))
+-- vim.lsp.enable({"pyright", "clangd"})
 
--- read :h vim.lsp.config for changing options of lsp bash-language-server (keywords: bash, csh, ksh, sh, zsh)
