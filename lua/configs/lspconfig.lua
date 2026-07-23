@@ -1,11 +1,11 @@
 local servers = {
   html = {},
   awk_ls = {},
-  bash-language-server = {},
+  ["bash-language-server"] = {},
   ruff = {},
-  rust-analyzer = {},
+  ["rust-analyzer"] = {},
   stylua = {},
-  nil = {},
+  nil_ls = {}, -- Note: 'nil' is a reserved keyword in Lua; the server name is usually 'nil_ls'
   pyright = {
     settings = {
       python = {
@@ -18,12 +18,9 @@ local servers = {
   },
 }
 
+-- Modern Neovim (v0.11+) approach to enable servers cleanly:
 for name, opts in pairs(servers) do
   vim.lsp.config(name, opts)
-  vim.lsp.enable(name)
 end
 
--- if you dont want to call the enable method in the loop, just pass a table.
 vim.lsp.enable(vim.tbl_keys(servers))
--- vim.lsp.enable({"pyright", "clangd"})
-
