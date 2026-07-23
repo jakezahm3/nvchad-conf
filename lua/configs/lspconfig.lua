@@ -8,7 +8,7 @@ local servers = {
   rust_analyzer = {},        -- Note: lspconfig uses "rust_analyzer", not "rust-analyzer"
   nil_ls = {},
   yaml_ls = {},
-  json_ls = {},
+  spectral = {},
   pyright = {},
 },
 -- Setup every server using binaries found natively in your Nix PATH
