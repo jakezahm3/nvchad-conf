@@ -1,11 +1,12 @@
+local lspconfig = require("lspconfig")
+
 local servers = {
   html = {},
   awk_ls = {},
-  ["bash-language-server"] = {},
+  bashls = {},               -- Note: lspconfig uses "bashls", not "bash-language-server"
   ruff = {},
-  ["rust-analyzer"] = {},
-  stylua = {},
-  nil_ls = {}, -- Note: 'nil' is a reserved keyword in Lua; the server name is usually 'nil_ls'
+  rust_analyzer = {},        -- Note: lspconfig uses "rust_analyzer", not "rust-analyzer"
+  nil_ls = {},
   pyright = {
     settings = {
       python = {
@@ -18,9 +19,8 @@ local servers = {
   },
 }
 
--- Modern Neovim (v0.11+) approach to enable servers cleanly:
+-- Setup every server using binaries found natively in your Nix PATH
 for name, opts in pairs(servers) do
-  vim.lsp.config(name, opts)
+  -- Merge your custom settings with standard lspconfig defaults
+  lspconfig[name].setup(opts)
 end
-
-vim.lsp.enable(vim.tbl_keys(servers))
