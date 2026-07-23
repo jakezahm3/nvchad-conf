@@ -12,5 +12,4 @@ return {
       return conf
     end,
   },
-},
 }
