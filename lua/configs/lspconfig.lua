@@ -1,4 +1,4 @@
-local lspconfig = require("lspconfig")
+require("nvchad.configs.lspconfig").defaults()
 
 local servers = {
   html = {},
@@ -7,20 +7,10 @@ local servers = {
   ruff = {},
   rust_analyzer = {},        -- Note: lspconfig uses "rust_analyzer", not "rust-analyzer"
   nil_ls = {},
-  pyright = {
-    settings = {
-      python = {
-        analysis = {
-          autoSearchPaths = true,
-          typeCheckingMode = "basic",
-        },
-      },
-    },
-  },
-}
-
+  yaml_ls = {},
+  json_ls = {},
+  pyright = {},
+},
 -- Setup every server using binaries found natively in your Nix PATH
-for name, opts in pairs(servers) do
-  -- Merge your custom settings with standard lspconfig defaults
-  lspconfig[name].setup(opts)
-end
+vim.lsp.enable(servers)
+
