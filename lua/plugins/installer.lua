@@ -13,6 +13,7 @@ return {
       "rust-analyzer",
       "prettierd",
       "jq",
+      "alejandra",
     },
     auto_update = false,
     run_on_start = true,
