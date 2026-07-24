@@ -7,8 +7,13 @@ return {
 		},
 		config = function()
 			require("codeium").setup({
-				bin_path = { "/home/jzahm/Desktop/" },
-				wrapper = { "/home/jzahm/.nix-profile/bin/steam-run" },
+				tools = {
+					uuidgen = "/run/current-system/sw/bin/uuidgen",
+					gzip = "/run/current-system/sw/bin/gzip",
+					uname = "/run/current-system/sw/bin/uname",
+					curl = "/run/current-system/sw/bin/curl",
+					language_server = "/home/jzahm/language_server_linux_x64",
+				},
 			})
 		end,
 	},
