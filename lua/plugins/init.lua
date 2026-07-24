@@ -9,7 +9,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			require("configs.lspconfig"):q
+			require("configs.lspconfig")
 		end,
 	},
 
