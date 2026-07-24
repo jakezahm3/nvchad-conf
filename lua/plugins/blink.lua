@@ -6,7 +6,7 @@ return {
 		"Exafunction/codeium.nvim",
 		"saghen/blink.lib",
 	},
-	build = function()
+	 build = "nix-shell -p cargo rustc --run 'cargo build --release'",
 		-- build the fuzzy matcher, optionally add a timeout to `pwait(timeout_ms)`
 		-- you can use `gb` in `:Lazy` to rebuild the plugin as needed
 		require("blink.cmp").build():pwait()
