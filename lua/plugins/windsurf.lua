@@ -8,8 +8,7 @@ return {
 		config = function()
 			require("codeium").setup({
 				tools = {
-					-- Satisfies the plugin's condition for an exact script path
-					wrapper = vim.fn.expand("$HOME") .. "/.config/nvim/nix-wrapper.sh",
+					language_server = "/home/jzahm/language_server_linux_x64",
 				},
 			})
 		end,
