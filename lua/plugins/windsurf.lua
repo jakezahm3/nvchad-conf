@@ -10,9 +10,10 @@ return {
 		config = function()
 			require("codeium").setup({
 				-- Keeps your NixOS compatibility working perfectly
-				wrapper = "steam-run",
+				language_server = "/home/jzahm/language_server_linux_x64"
+
+        wrapper = "steam-run",
 				tools = {
-					language_server = "/home/jzahm/language_server_linux_x64",
 				},
 				enable_chat = true, -- Optional: Enables the :Codeium Chat interface
 			})
