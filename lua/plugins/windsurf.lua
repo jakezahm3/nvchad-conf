@@ -1,6 +1,6 @@
 return {
 	{
-		"Exafunction/windsurf.nvim",
+		"Exafunction/codeium.nvim", -- Changed from windsurf.nvim
 		-- Lazy-loads on entering a buffer to ensure NvChad's environment variables settle
 		event = "BufEnter",
 		dependencies = {
@@ -9,8 +9,9 @@ return {
 		},
 		config = function()
 			require("codeium").setup({
-				-- Corrected: wrapper sits cleanly at the top level of the setup table
+				-- Keeps your NixOS compatibility working perfectly
 				wrapper = "steam-run",
+				enable_chat = true, -- Optional: Enables the :Codeium Chat interface
 			})
 		end,
 	},
