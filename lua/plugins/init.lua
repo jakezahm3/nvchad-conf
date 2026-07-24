@@ -13,8 +13,10 @@ return {
 		end,
 	},
 
-	-- test new blink
-	{ import = "nvchad.blink.lazyspec" },
+	{
+		"hrsh7th/nvim-cmp",
+		opts = { enabled = false },
+	},
 
 	{
 		"nvim-treesitter/nvim-treesitter",
