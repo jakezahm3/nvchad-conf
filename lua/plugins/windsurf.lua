@@ -1,7 +1,7 @@
 return {
 	{
 		"Exafunction/windsurf.nvim",
-    event = "BufferEnter"
+		event = "BufferEnter",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"saghen/blink.cmp",
