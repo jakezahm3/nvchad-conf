@@ -7,8 +7,9 @@ return {
 		},
 		config = function()
 			require("codeium").setup({
-      bin_path = { "/home/jzahm/Desktop/" }
-      })
+				bin_path = { "/home/jzahm/Desktop/" },
+				wrapper = { "/home/jzahm/.nix-profile/bin/steam-run" },
+			})
 		end,
 	},
 }
