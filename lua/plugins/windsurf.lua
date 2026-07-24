@@ -6,8 +6,8 @@ return {
 			"hrsh7th/nvim-cmp",
 		},
 		config = function()
-			require("codeium").setup( opts = {
-      bin_path = "/home/jzahm/Desktop/"
+			require("codeium").setup({
+      bin_path = { "/home/jzahm/Desktop/" }
       })
 		end,
 	},
